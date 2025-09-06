@@ -33,10 +33,12 @@ public class FullBank {
     }
 
     public static void loadtofile() {
-        try (FileWriter fw = new FileWriter(f)) {
+        try {
+            FileWriter fw = new FileWriter(f);
             for (int key : map.keySet()) {
                 String val = map.get(key);
                 fw.write(val + "\n");
+                fw.close();
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -53,8 +55,10 @@ public class FullBank {
         sc.nextLine();
         int pin = 1000 + (int) (Math.random() * 9000);
         String line = pin + "," + amount + "," + name + "," + address;
-        try (FileWriter fw = new FileWriter(f, true)) {
+        try {
+            FileWriter fw = new FileWriter(f, true);
             fw.write(line + "\n");
+            fw.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

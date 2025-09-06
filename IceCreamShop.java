@@ -2,7 +2,7 @@ package project;
 
 import java.util.Scanner;
 
-public class Ice_cream_shop {
+public class IceCreamShop {
     public static void main(String[] args) {
         int ch_qnty = 0;
         int van_qnty = 0;
